@@ -796,6 +796,7 @@ header {
     position: relative;
     font-size: 16px;
     label {
+        cursor: pointer;
         input {
             position: absolute;
             opacity: 0;
@@ -820,6 +821,9 @@ header {
         border-radius: 3px;
         background-color: #000;
         border: 1px solid $second-color;
+    }
+    &:hover {
+        color: $a-color-hover;
     }
 }
 

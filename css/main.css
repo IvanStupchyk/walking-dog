@@ -1182,6 +1182,9 @@ header {
   position: relative;
   font-size: 16px;
 }
+.checkboxes label {
+  cursor: pointer;
+}
 .checkboxes label input {
   position: absolute;
   opacity: 0;
@@ -1205,6 +1208,9 @@ header {
   border-radius: 3px;
   background-color: #000;
   border: 1px solid #fff;
+}
+.radio-text:hover {
+  color: #FFD600;
 }
 
 .btn-inquire.btn-subscribe {
