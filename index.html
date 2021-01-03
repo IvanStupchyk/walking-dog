@@ -236,30 +236,30 @@
                 <form class="value-dogs" method="GET">
                     <select class="select-dog">
                         <option class="option-selected" value="" disabled selected hidden>Select a dog breed</option>
-                        <option>Pomeranian</option>
-                        <option>Pug</option>
-                        <option>Puli</option>
-                        <option>Pumi</option>
-                        <option>Pyrenean Mastiff</option>
+                        <option value="6">Pomeranian</option>
+                        <option value="2">Pug</option>
+                        <option value="4">Puli</option>
+                        <option value="5">Pumi</option>
+                        <option value="8">Pyrenean Mastiff</option>
                     </select>
                     <select class="select-dog">
                         <option class="option-selected" value="" disabled selected hidden>Select dog size</option>
-                        <option>up to 4 kg</option>
-                        <option>5 - 8 kg</option>
-                        <option>9 - 12 kg</option>
-                        <option>13 - 18 kg</option>
-                        <option>19+ kg</option>
+                        <option value="2.31">up to 4 kg</option>
+                        <option value="3.46">5 - 8 kg</option>
+                        <option value="4.13">9 - 12 kg</option>
+                        <option value="5.55">13 - 18 kg</option>
+                        <option value="6.87">19+ kg</option>
                     </select>
                     <select class="select-dog">
                         <option class="option-selected" value="" disabled selected hidden>Select regularity</option>
-                        <option>1 per day</option>
-                        <option>2 times a day</option>
-                        <option>3 times a day</option>
+                        <option value="1">1 per day</option>
+                        <option value="2">2 times a day</option>
+                        <option value="3">3 times a day</option>
                     </select>
-                    <button>Count</button>
+                    <button id="btn-count">Count</button>
                 </form>
                 <div class="day-cost">
-                    <p>= $ 00.00 per day</p>
+                    <p id="per-day">= $ 00.00 per day</p>
                 </div>
             </div>
         </section>
@@ -401,12 +401,12 @@
             </div>
             <div class="form">
                 <h6>Get our newsletter</h6>
-                <form action="" method="GET">
+                <form action="https://formspree.io/irinaboiko95@gmail.com" method="POST" >
                     <div class="form-name">
-                        <input type="text" placeholder="Name" name="name">
+                        <input type="text" placeholder="Name" name="name" required>
                     </div>
                     <div class="form-email">
-                        <input type="text" placeholder="E-mail Adress" name="email">
+                        <input type="email" placeholder="E-mail Adress" name="email" required>
                     </div>
                     <p class="header-checkbox">Send me:</p>
                     <div class="checkboxes">
@@ -419,10 +419,9 @@
                             <span class="radio-text">Blog News</span>
                         </label>
                     </div>
-                    <a class="btn-inquire btn-subscribe" href="#">
+                    <button class="btn-inquire btn-subscribe" type="submit">
                         <span>Subscribe</span>
-
-                    </a>
+                    </button>
                 </form>
             </div>
         </div>

@@ -1,3 +1,4 @@
+//slider
 $('.reviews-slider').slick({
     dots: false,
     infinite: true,
@@ -6,6 +7,8 @@ $('.reviews-slider').slick({
     adaptiveHeight: true
 });
 
+
+//selects
 var selectedValue1 = document.getElementsByClassName('option-selected')[0];
     selectDog1 = document.getElementsByClassName('select-dog')[0],
     selectedValue2 = document.getElementsByClassName('option-selected')[1],
@@ -18,15 +21,54 @@ selectDog1.addEventListener('click', function() {
     selectedValue1.innerHTML ='<p>Start typing</p>'; 
 })
 
+var breedOfDog;
+selectDog1.onchange = function() {
+    var option = selectDog1[selectDog1.selectedIndex],
+        selectedValue = option.getAttribute('value');
+
+    breedOfDog = selectedValue;
+};
+
 selectDog2.addEventListener('click', function() {
     selectedValue2.innerHTML ='<p>Select from the list</p>'; 
 })
+
+var weightDog;
+selectDog2.onchange = function() {
+    var option = selectDog2[selectDog2.selectedIndex],
+        selectedValue = option.getAttribute('value');
+
+    weightDog = selectedValue;
+};
 
 selectDog3.addEventListener('click', function() {
     selectedValue3.innerHTML ='<p>Select from the list</p>'; 
 })
 
+var timesDay;
+selectDog3.onchange = function() {
+    var option = selectDog3[selectDog3.selectedIndex],
+        selectedValue = option.getAttribute('value');
+    
+    timesDay = selectedValue;
+};
 
+var btnCount = document.getElementById('btn-count'),
+    perDay = document.getElementById('per-day');
+
+btnCount.addEventListener('click', function (event) {
+    event.preventDefault();
+    if (breedOfDog == undefined || weightDog == undefined || timesDay == undefined) {
+        perDay.classList.add('bg-count');
+        perDay.innerHTML ='<p>select all options</p>';
+    }
+    else {
+        perDay.classList.remove('bg-count');
+        perDay.innerHTML ='<p>= $ ' + ((breedOfDog + weightDog) * timesDay).toFixed(2) + ' per day <p>';
+    }
+})
+
+/*mobile desktop and mob*/
 $("#menu-desktop").on("click","a", function (event) {
     event.preventDefault();
       let id  = $(this).attr('href'),
@@ -41,7 +83,6 @@ $("#menu-mob").on("click", "a", function (event) {
     $('body,html').animate({scrollTop: top}, 900);
 });
   
-/*mobile menu*/
 let menuBtn = document.querySelector('.menu-btn');
     menuLines = document.querySelector('.menu-btn-lines'),
     menuMobBox = document.querySelector('.menu-box'),
@@ -60,4 +101,8 @@ menuItem.forEach(function(btn) {
         menuMobBox.classList.remove("menu-show");
     });
 });
+
+
+
+
 

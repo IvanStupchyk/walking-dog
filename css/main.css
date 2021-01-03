@@ -897,6 +897,10 @@ header {
   letter-spacing: 1px;
 }
 
+.bg-count {
+  color: red;
+}
+
 .wr-blogs {
   padding-top: 2.8vh;
   padding-bottom: 14.8vh;
@@ -1135,6 +1139,7 @@ header {
   font-size: 16px;
   background-color: #ffffff26;
   border: none;
+  color: #fff;
 }
 .form-name input::-webkit-input-placeholder, .form-email input::-webkit-input-placeholder {
   color: #fff;
