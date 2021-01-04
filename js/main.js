@@ -21,6 +21,10 @@ selectDog1.addEventListener('click', function() {
     selectedValue1.innerHTML ='<p>Start typing</p>'; 
 })
 
+selectDog1.addEventListener('blur', function() {
+    selectedValue1.innerHTML ='<p>Select a dog breed</p>'; 
+})
+
 var breedOfDog;
 selectDog1.onchange = function() {
     var option = selectDog1[selectDog1.selectedIndex],
@@ -33,6 +37,10 @@ selectDog2.addEventListener('click', function() {
     selectedValue2.innerHTML ='<p>Select from the list</p>'; 
 })
 
+selectDog2.addEventListener('blur', function() {
+    selectedValue2.innerHTML ='<p>Select dog size</p>'; 
+})
+
 var weightDog;
 selectDog2.onchange = function() {
     var option = selectDog2[selectDog2.selectedIndex],
@@ -43,6 +51,10 @@ selectDog2.onchange = function() {
 
 selectDog3.addEventListener('click', function() {
     selectedValue3.innerHTML ='<p>Select from the list</p>'; 
+})
+
+selectDog3.addEventListener('blur', function() {
+    selectedValue3.innerHTML ='<p>Select regularity</p>'; 
 })
 
 var timesDay;
