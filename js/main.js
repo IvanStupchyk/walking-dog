@@ -9,7 +9,7 @@ $('.reviews-slider').slick({
 
 
 //selects
-var selectedValue1 = document.getElementsByClassName('option-selected')[0];
+let selectedValue1 = document.getElementsByClassName('option-selected')[0],
     selectDog1 = document.getElementsByClassName('select-dog')[0],
     selectedValue2 = document.getElementsByClassName('option-selected')[1],
     selectDog2 = document.getElementsByClassName('select-dog')[1],
@@ -25,12 +25,9 @@ selectDog1.addEventListener('blur', function() {
     selectedValue1.innerHTML ='<p>Select a dog breed</p>'; 
 })
 
-var breedOfDog;
+let breedOfDog;
 selectDog1.onchange = function() {
-    var option = selectDog1[selectDog1.selectedIndex],
-        selectedValue = option.getAttribute('value');
-
-    breedOfDog = selectedValue;
+    breedOfDog = selectDog1[selectDog1.selectedIndex].getAttribute('value');
 };
 
 selectDog2.addEventListener('click', function() {
@@ -41,12 +38,9 @@ selectDog2.addEventListener('blur', function() {
     selectedValue2.innerHTML ='<p>Select dog size</p>'; 
 })
 
-var weightDog;
+let weightDog;
 selectDog2.onchange = function() {
-    var option = selectDog2[selectDog2.selectedIndex],
-        selectedValue = option.getAttribute('value');
-
-    weightDog = selectedValue;
+    weightDog = selectDog2[selectDog2.selectedIndex].getAttribute('value');
 };
 
 selectDog3.addEventListener('click', function() {
@@ -57,26 +51,23 @@ selectDog3.addEventListener('blur', function() {
     selectedValue3.innerHTML ='<p>Select regularity</p>'; 
 })
 
-var timesDay;
+let timesDay;
 selectDog3.onchange = function() {
-    var option = selectDog3[selectDog3.selectedIndex],
-        selectedValue = option.getAttribute('value');
-    
-    timesDay = selectedValue;
+    timesDay = selectDog3[selectDog3.selectedIndex].getAttribute('value');
 };
 
-var btnCount = document.getElementById('btn-count'),
+let btnCount = document.getElementById('btn-count'),
     perDay = document.getElementById('per-day');
 
 btnCount.addEventListener('click', function (event) {
     event.preventDefault();
-    if (breedOfDog == undefined || weightDog == undefined || timesDay == undefined) {
+    if (breedOfDog === undefined || weightDog === undefined || timesDay === undefined) {
         perDay.classList.add('bg-count');
         perDay.innerHTML ='<p>select all options</p>';
     }
     else {
         perDay.classList.remove('bg-count');
-        perDay.innerHTML ='<p>= $ ' + ((breedOfDog + weightDog) * timesDay).toFixed(2) + ' per day <p>';
+        perDay.innerHTML =`<p>= $ ${((breedOfDog + weightDog) * timesDay).toFixed(2)} per day <p>`;
     }
 })
 
